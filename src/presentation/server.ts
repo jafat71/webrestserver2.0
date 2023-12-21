@@ -2,7 +2,7 @@
 import express, { Router } from 'express'
 import path from 'path'
 import { stringify } from 'querystring';
-
+import compression from 'compression'
 interface Options {
     port: number,
     routes: Router,
@@ -26,7 +26,7 @@ export class Server {
         //MIDDLEWARES
         this.app.use(express.json()) // raw
         this.app.use(express.urlencoded({extended:true})) //x-www-url-encoded
-
+        this.app.use(compression())
         //PUBLIC FOLDER
         this.app.use(express.static(this.publicPath))
 
