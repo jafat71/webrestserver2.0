@@ -1,5 +1,5 @@
 import { Server } from "./presentation/server"
-import { envs } from './config/.envs';
+import { envs } from './config/envs';
 import { AppRoutes } from "./presentation/routes";
 
 (()=>{
